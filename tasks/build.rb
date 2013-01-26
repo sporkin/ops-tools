@@ -1,4 +1,3 @@
-
 require 'fileutils'
 
 # 1. move to ../release/ui-front
@@ -9,7 +8,7 @@ require 'fileutils'
 # 6. add heroku remote git repo
 # 7. git push heroku
 
-base_url = "#{ENV['PWD']}/../../" 
+base_url = "#{ENV['PWD']}/../../"
 FileUtils.rm_r "#{base_url}release/ui-front", :force => true
 v = "0.0.4"
 
@@ -19,7 +18,7 @@ FileUtils.cd('../../release/') do
   FileUtils.cd('ui-front') do
     puts %x{ git branch #{branch_name} }
     puts %x{ git checkout #{branch_name} }
-    FileUtils.rm %w( Gemfile Gemfile.lock Procfile), :force => true
+    FileUtils.rm %w( Gemfile Gemfile.lock Procfile ), :force => true
     FileUtils.cp('../../ops-tools/production_configs/Procfile.example', 'Procfile')
     puts %x{ git add . }
     puts %x{ git rm Gemfile Gemfile.lock }
