@@ -1,0 +1,24 @@
+1. clone the repo under sporkin.it/release
+2. git pull for each repo
+3. git branch release.v0.1
+4. build
+5. commit and push origin release
+6. git push heroku release.v0.1:master
+
+
+
+git tag -a v1.1
+And push it to Heroku:
+
+git push -f heroku v1.1^{}:master
+
+
+
+$ cd ~/projects/sporkin.it~
+$ cd ./ui-front
+
+$ heroku create staging-ui-front
+$ heroku addons:add cloudamqp:lemur
+
+
+
